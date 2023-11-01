@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+svg path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 1s linear forwards;
+}
+
+#ProgressBar {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: dash 1s linear forwards;
+}
+.animate-left {
+  animation: arrowMoveLeft 1s ease forwards; /* Apply the animation to the element */
+}
+
+.animate-right {
+  animation: arrowMoveRight 1s ease forwards; /* Apply the animation to the element */
+}
+
+.animate-top {
+  animation: arrowMoveTop 1s ease forwards; /* Apply the animation to the element */
+}
+
+.animate-path {
+  animation: pathAppear 2s ease forwards; /* Apply the animation to the element */
+}
+
+.animate-bottom {
+  animation: arrowMoveBottom 1s ease forwards;
+
+  /* Apply the animation to the element */
+}
+
+/* Key Frames */
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pathAppear {
+  from {
+    opacity: 0; /* Initially hidden */
+  }
+  to {
+    opacity: 1; /* Fully visible */
+  }
+}
+
+#myPath {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawPath 1.5s ease forwards;
+  animation-delay: 1s;
+  stroke-width: 0.3; /* Set a smaller stroke width */
+}
+
+@keyframes drawPath {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animated-line {
+  opacity: 0;
+  animation: line-appear 1s linear forwards;
+}
+
+@keyframes line-appear {
+  to {
+    opacity: 1;
+  }
+}
+
+.line-delay-1 {
+  animation-delay: 0s;
+}
+
+.line-delay-2 {
+  animation-delay: 0.35s;
+}
+
+.line-delay-3 {
+  animation-delay: 0.7s;
+}
+
+.line-delay-4 {
+  animation-delay: 1.2s;
+}
+
+.line-delay-5 {
+  animation-delay: 1.65s;
+}
+
+.line-delay-6 {
+  animation-delay: 2s;
+}
+
+.line-delay-7 {
+  animation-delay: 2.35s;
+}
+
+@keyframes arrowMoveLeft {
+  from {
+    opacity: 0; /* Initially hidden */
+    transform: translateX(-200px); /* Offset from the left by 100px */
+  }
+  to {
+    opacity: 1.5; /* Fully visible */
+    transform: translateX(0); /* Back to its original position */
+  }
+}
+
+@keyframes arrowMoveRight {
+  from {
+    opacity: 0; /* Initially hidden */
+    transform: translateX(300px); /* Offset from the left by 100px */
+  }
+  to {
+    opacity: 1.5; /* Fully visible */
+    transform: translateX(0); /* Back to its original position */
+  }
+}
+
+@keyframes arrowMoveTop {
+  from {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(200px); /* Offset from the left by 100px */
+  }
+  to {
+    opacity: 1.5; /* Fully visible */
+    transform: translateY(0); /* Back to its original position */
+  }
+}
+
+@keyframes arrowMoveBottom {
+  from {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(-300px); /* Offset from the left by 100px */
+  }
+  to {
+    opacity: 1.5; /* Fully visible */
+    transform: translateY(0); /* Back to its original position */
+  }
+}
+
+.animate-dash {
+  animation: dashPath 1s linear forwards;
+}
+
+@keyframes dashPath {
+  from {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    transform: translateY(-300px);
+  }
+  to {
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
+    transform: translateY(0);
+  }
+}
